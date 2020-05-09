@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+{% block content %}
+    <h1>Welcome to my page!</h1>
+    <p>
+        This is the demo application for the course
+        <em>Getting Started with Flask</em>
+    </p>
+    <h2>Members</h2>
+    <ul>
+        {% for member in members %}
+            <li>
+                <a href="{{ url_for('member_view', index=loop.index0) }}">
+                    {{ member.upper() }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_member') }}">Add a new member</a>
+{% endblock %}

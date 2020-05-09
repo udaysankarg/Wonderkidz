@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Add Member{% endblock %}
+
+{% block content %}
+    <h1>Add a new member</h1>
+    <form method="post">
+        <p>
+            <input type="radio" id="Parent" name="type" value="Parent">
+            <label for="Parent">Parent</label>
+            <input type="radio" id="Staff" name="type" value="Staff">
+            <label for="Staff">Staff</label>
+            <input type="radio" id="Student" name="type" value="Student">
+            <label for="Parent">Student</label>
+            <input type="radio" id="Teacher" name="type" value="Teacher">
+            <label for="Staff">Teacher</label><br>
+        </p>
+
+
+        <p>
+            Name:
+            <input type="text" name="name">
+        </p>
+        <button type="submit">Create</button>
+    </form>
+{% endblock %}

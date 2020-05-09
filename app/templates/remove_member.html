@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Remove Member{% endblock %}
+
+{% block content %}
+    <h1>Remove Member</h1>
+    Type: {{ member.type }} <br>
+    Name:   {{ member.name }}
+
+    <h2>Are you sure?</h2>
+    <form method="post">
+        <button type="submit">Yes</button>
+        <button onclick="{{ url_for('welcome') }}" disabled>No</button>
+        <a href="{{ url_for('welcome') }}">No</a>
+    </form>
+{% endblock %}

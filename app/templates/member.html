@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Flash member{% endblock %}
+
+{% block content %}
+    <h1>Flash member</h1>
+    Type: {{ type.upper() }}
+    {% for member in members %}
+        <br>
+        Name:   {{ member.name }}
+
+    {% endfor %}
+    <p>
+        <a href="{{ url_for('welcome') }}">Home</a>
+        <button>
+        {% if index < max_index %}
+            <a href="{{ url_for('member_view', index=index+1) }}">
+                Next member
+            </a>
+        {% else %}
+            <a href="{{ url_for('member_view', index=0) }}">
+                Start over
+            </a>
+        {% endif %}
+        </button>
+    </p>
+    <a href="{{ url_for('remove_member', index=index) }}">Remove this member</a>
+{% endblock %}
