@@ -5,7 +5,9 @@
 {% block content %}
     <h1>Add a new member</h1>
     <form method="post">
+        <h3>Employee type</h3>
         <p>
+
             <input type="radio" id="Parent" name="type" value="Parent">
             <label for="Parent">Parent</label>
             <input type="radio" id="Staff" name="type" value="Staff">
@@ -18,8 +20,28 @@
 
 
         <p>
-            Name:
-            <input type="text" name="name">
+            First name:
+            <input type="text" name="fname">
+        </p>
+        <p>
+            Last Name:
+            <input type="text" name="lname">
+        </p>
+        <p>
+            Joining Date:
+            <input type="date" name="doj">
+
+        </p>
+        <p>
+            Gender:&nbsp;&nbsp;&nbsp;
+            <input type="text" name="gender">
+        </p>
+        <p>
+            Birth Date:
+
+            <input type="date" name="dob">
+
+
         </p>
         <button type="submit">Create</button>
     </form>

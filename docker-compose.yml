@@ -1,0 +1,27 @@
+version: '3.1'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    working_dir: /code
+    volumes:
+      - ./:/code
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_DATABASE: wonderkidz
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - wondervol:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: wonderkidz
+    ports:
+      - "3306:3306"
+
+volumes:
+  wondervol:

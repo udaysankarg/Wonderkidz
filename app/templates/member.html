@@ -1,28 +1,27 @@
 {% extends "base.html" %}
 
-{% block title %}Flash member{% endblock %}
+{% block title %}Employee list{% endblock %}
 
 {% block content %}
-    <h1>Flash member</h1>
-    Type: {{ type.upper() }}
-    {% for member in members %}
-        <br>
-        Name:   {{ member.name }}
+    <h1>Employee list</h1>
+    <table id="t01">
+      <tr>
+          <th>Emp ID</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Hire Date</th>
+      </tr>
+      {% for member in members %}
+        <tr>
+            <td>{{ member.empid }}</td>
+            <td>{{ member.fname }}</td>
+            <td>{{ member.lname }}</td>
+            <td>{{ member.hdate }}</td>
+        </tr>
 
-    {% endfor %}
-    <p>
-        <a href="{{ url_for('welcome') }}">Home</a>
-        <button>
-        {% if index < max_index %}
-            <a href="{{ url_for('member_view', index=index+1) }}">
-                Next member
-            </a>
-        {% else %}
-            <a href="{{ url_for('member_view', index=0) }}">
-                Start over
-            </a>
-        {% endif %}
-        </button>
-    </p>
-    <a href="{{ url_for('remove_member', index=index) }}">Remove this member</a>
+        {% endfor %}
+    </table>
+
+    <button><a href="{{ url_for('welcome') }}">Home Page</a></button>
+
 {% endblock %}
