@@ -5,14 +5,14 @@
     <h1>Welcome to my page!</h1>
     <p>
         This is the demo application for the course
-        <em>Getting Started with Flask</em>
+        <em>Getting Started with Flask app with Docker</em>
     </p>
     <h2>Members</h2>
     <ul>
         {% for member in members %}
             <li>
-                <a href="{{ url_for('member_view', index=loop.index0) }}">
-                    {{ member.upper() }}
+                <a href="{{ url_for('emp_list') }}">
+                    {{ member }}
                 </a>
             </li>
         {% endfor %}
